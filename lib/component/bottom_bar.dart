@@ -31,7 +31,6 @@ class _NavigationBarComponenState extends State<NavigationBarComponen> {
   }
 
   Container buildMyNavBar(BuildContext context) {
-    print(pageIndex);
     return Container(
       height: 60,
       child: Row(
@@ -81,13 +80,16 @@ class _NavigationBarComponenState extends State<NavigationBarComponen> {
                       });
                     },
                     enableFeedback: false,
-                    icon: Image.asset("assets/logo/fav_bar.png", height: 20)),pageIndex != 1 ? SizedBox() :   Container(
-                      height: 3,
-                      width: 55,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10)),
-                    )
+                    icon: Image.asset("assets/logo/fav_bar.png", height: 20)),
+                pageIndex != 1
+                    ? SizedBox()
+                    : Container(
+                        height: 3,
+                        width: 55,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                      )
               ],
             ),
           ),
@@ -105,13 +107,16 @@ class _NavigationBarComponenState extends State<NavigationBarComponen> {
                       });
                     },
                     enableFeedback: false,
-                    icon: Image.asset("assets/logo/cart_bar.png", height: 20)), pageIndex != 2 ? SizedBox() :   Container(
-                      height: 3,
-                      width: 55,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10)),
-                    )
+                    icon: Image.asset("assets/logo/cart_bar.png", height: 20)),
+                pageIndex != 2
+                    ? SizedBox()
+                    : Container(
+                        height: 3,
+                        width: 55,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                      )
               ],
             ),
           ),
@@ -129,13 +134,17 @@ class _NavigationBarComponenState extends State<NavigationBarComponen> {
                       });
                     },
                     enableFeedback: false,
-                    icon: Image.asset("assets/logo/bar_profile.png", height: 20)), pageIndex != 3 ? SizedBox() :    Container(
-                      height: 3,
-                      width: 55,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10)),
-                    )
+                    icon:
+                        Image.asset("assets/logo/bar_profile.png", height: 20)),
+                pageIndex != 3
+                    ? SizedBox()
+                    : Container(
+                        height: 3,
+                        width: 55,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                      )
               ],
             ),
           )
