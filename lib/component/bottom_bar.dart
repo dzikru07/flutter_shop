@@ -1,36 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shop/main.dart';
+import 'package:flutter_shop/style/color.dart';
 
 import '../content/home_page.dart';
-import '../style/color.dart';
 
-class NavigationBarComponen extends StatefulWidget {
-  const NavigationBarComponen({super.key});
+class NavigationBarComponent extends StatefulWidget {
+  const NavigationBarComponent({super.key});
 
   @override
-  State<NavigationBarComponen> createState() => _NavigationBarComponenState();
+  State<NavigationBarComponent> createState() => _NavigationBarComponentState();
 }
 
-class _NavigationBarComponenState extends State<NavigationBarComponen> {
+class _NavigationBarComponentState extends State<NavigationBarComponent> {
   int pageIndex = 0;
 
-  final pages = [
-    MyHomePage(),
-    MyHomePage(),
-    MyHomePage(),
-    MyHomePage(),
-  ];
+  final pages = [MyHomePage(), MyHomePage(), MyHomePage(), MyHomePage()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: mainColor,
-      body: pages[pageIndex],
-      bottomNavigationBar: buildMyNavBar(context),
+      body: pages[0],
+      bottomNavigationBar: builMyNavBar(context),
     );
   }
 
-  Container buildMyNavBar(BuildContext context) {
+  Container builMyNavBar(BuildContext context) {
     return Container(
       height: 60,
       child: Row(
@@ -80,7 +74,10 @@ class _NavigationBarComponenState extends State<NavigationBarComponen> {
                       });
                     },
                     enableFeedback: false,
-                    icon: Image.asset("assets/logo/fav_bar.png", height: 20)),
+                    icon: Image.asset(
+                      "assets/logo/fav_bar.png",
+                      height: 20,
+                    )),
                 pageIndex != 1
                     ? SizedBox()
                     : Container(
@@ -107,7 +104,10 @@ class _NavigationBarComponenState extends State<NavigationBarComponen> {
                       });
                     },
                     enableFeedback: false,
-                    icon: Image.asset("assets/logo/cart_bar.png", height: 20)),
+                    icon: Image.asset(
+                      "assets/logo/cart_bar.png",
+                      height: 20,
+                    )),
                 pageIndex != 2
                     ? SizedBox()
                     : Container(
@@ -134,8 +134,10 @@ class _NavigationBarComponenState extends State<NavigationBarComponen> {
                       });
                     },
                     enableFeedback: false,
-                    icon:
-                        Image.asset("assets/logo/bar_profile.png", height: 20)),
+                    icon: Image.asset(
+                      "assets/logo/bar_profile.png",
+                      height: 20,
+                    )),
                 pageIndex != 3
                     ? SizedBox()
                     : Container(
@@ -147,7 +149,7 @@ class _NavigationBarComponenState extends State<NavigationBarComponen> {
                       )
               ],
             ),
-          )
+          ),
         ],
       ),
     );

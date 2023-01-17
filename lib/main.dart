@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: colorTheme,
       ),
-      home: const NavigationBarComponen(),
+      home: const NavigationBarComponent(),
     );
   }
 }

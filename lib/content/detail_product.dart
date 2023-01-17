@@ -3,7 +3,9 @@ import 'package:flutter_shop/style/color.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({super.key});
+  DetailPage({required this.name, required this.image, super.key});
+
+  String name, image;
 
   @override
   Widget build(BuildContext context) {
@@ -19,20 +21,20 @@ class DetailPage extends StatelessWidget {
                   height: size.height / 1.5,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(
-                      "assets/images/model_1.png",
-                    ),
-                  )),
+                          image: AssetImage(image), fit: BoxFit.fill)),
                 ),
                 Positioned(
-                  top: 30,
-                  left: 30,
-                  child: Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.white,
-                  ),
-                )
+                    top: 30,
+                    left: 30,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                      ),
+                    ))
               ],
             ),
             Padding(
@@ -41,16 +43,16 @@ class DetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "T-shirt Just Culture",
+                    name,
                     style: GoogleFonts.poppins(
-                        color: Color(0xff0A0A0A),
+                        color: Color(0xff0a0a0a),
                         fontSize: 20,
                         fontWeight: FontWeight.w700),
                   ),
                   Row(
                     children: [
                       Text(
-                        "Rp, 250,000",
+                        "IDR 250,000",
                         style: GoogleFonts.poppins(
                             color: Color(0xff595959),
                             fontSize: 12,
@@ -72,7 +74,7 @@ class DetailPage extends StatelessWidget {
                                 color: Colors.white,
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold),
-                          )
+                          ),
                         ],
                       ),
                     ],
@@ -81,9 +83,9 @@ class DetailPage extends StatelessWidget {
                     height: 15,
                   ),
                   Text(
-                    "Deskripsi",
+                    "Description",
                     style: GoogleFonts.poppins(
-                        color: Color(0xff0A0A0A),
+                        color: Color(0xff0a0a0a),
                         fontSize: 12,
                         fontWeight: FontWeight.bold),
                   ),
@@ -93,7 +95,7 @@ class DetailPage extends StatelessWidget {
                   Text(
                     "barang yang di foto Di jamin100% mirip aslinya baru.GARANSI jika barang Tidak Sesuai bila barang reject akan kami retur dengan barang yang baru belum terpakai 👍👍👍☝Barang yg kami kirim selalu melalui proses checking agar tidak terjadi kekeliruan baik motif maupun sizenya. Stok kosong langsung kami konfirmasi, TIDAK ASAL KIRIM. 100% GARANSI jika produk tidak Terima Kasih Sudah Berkunjung di Toko Kami.Happy Shopping!! ",
                     style: GoogleFonts.poppins(
-                        color: Color(0xff0A0A0A),
+                        color: Color(0xff0a0a0a),
                         fontSize: 12,
                         fontWeight: FontWeight.normal),
                   ),
@@ -127,19 +129,16 @@ class DetailPage extends StatelessWidget {
                             color: mainColor),
                         child: Center(
                           child: Text(
-                            "Add To Cart",
+                            "Buy Now",
                             style: GoogleFonts.poppins(
                                 color: Colors.white,
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
-                      ),
+                      )
                     ],
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
+                  )
                 ],
               ),
             )
